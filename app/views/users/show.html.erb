@@ -10,5 +10,13 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <u><strong>Micropost</strong></u>
+  <br></br>
+  <% @user.microposts.each_with_index do |post, idx| %>
+  	<%= 'Post ' + (idx).to_s + ': ' +  post.content %></br>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
